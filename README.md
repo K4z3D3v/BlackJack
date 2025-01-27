@@ -69,9 +69,9 @@ Se avete installato nodemon:
     nodemon server.js
 ```
 
-## Buon divertimento ludopatico. :)
-
 Se fino ad ora avete fatto tutto nel modo corretto, vi dovrebbe spuntare una scritta che vi da il link http://localhost:3000. Apritelo.
+
+## Buon divertimento ludopatico. :)
 
 ## Authors
 
