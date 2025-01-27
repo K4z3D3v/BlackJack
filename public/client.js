@@ -26,6 +26,7 @@ socket.on('aggiornaGiocatori', (giocatori, dealer, turnoCorrente) => {
             const divGioAggiornato = document.getElementById(id);
             divGioAggiornato.querySelector('.player-info').textContent =`${giocatori[index].nome}`;
             divGioAggiornato.querySelector('.punteggio-giocatore').textContent = giocatori[index].punteggio;
+            document.getElementById('saldoVal').textContent = '';
             document.getElementById('saldoVal').textContent = giocatori[index].saldo;
             const cardContainer = divGioAggiornato.querySelector('.card-container');
             cardContainer.innerHTML = '';
@@ -59,7 +60,7 @@ socket.on('aggiornaGiocatori', (giocatori, dealer, turnoCorrente) => {
     });
 });
 
-socket.on('fineRound', () => {
+socket.on('fineRound', () => { 
     const risultatoDiv = document.getElementById('risultati');
     const risultatoTesto = document.getElementById('risTesto');
     const blurB = document.getElementById('blurB');
@@ -68,7 +69,7 @@ socket.on('fineRound', () => {
         setTimeout(() => {
             risultatoDiv.style.display = 'flex';
             blurB.style.display = 'block';
-
+            console.log(Giocatore.stato);
             if (Giocatore.stato === 'Bust') risultatoTesto.textContent = 'Hai perso!';
             else if (Giocatore.stato === 'Pareggio') risultatoTesto.textContent = 'Pareggio!';
             else if (Giocatore.stato === 'Vinto') risultatoTesto.textContent = 'Hai Vinto!';

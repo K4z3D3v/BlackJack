@@ -175,10 +175,10 @@ function resetGame() {
         giocatore.carte = [];
         giocatore.stand = false;
         giocatore.punteggio = 0;
-        if (giocatore.haScommesso) {
-            giocatore.sommaSc = 0;
-            giocatore.haScommesso = false;
-        }
+        giocatore.sommaSc = 0;
+        giocatore.haScommesso = false;
+        giocatore.stato = '';
+        giocatore.sommaSc = 0;
     });
     dealer.carte = [];
     dealer.mostraCarte = false;
@@ -188,6 +188,7 @@ function resetGame() {
 }
 
 function prossimoTurno() {
+    console.log('TURNO CHIAMATO');
     if (giocatori.every((g) => g.stand || g.punteggio === 'Bust')) {
         dealerPlay();
     } else {
@@ -240,41 +241,51 @@ function daiCarte(nCarte, ogg) {
 
 function controllaVincitori() {
     giocatori.forEach((giocatore) => {
-
-        if (dealer.punteggio === 'Bust') {
-            if (giocatore.punteggio === 'Bust') {
+        switch (true) {
+            case giocatore.punteggio === 'Bust':
                 giocatore.stato = 'Perso';
-            } else {
+                console.log(`${giocatore.nome} ha perso (Bust)`);
+                break;
+
+            case dealer.punteggio > 21 && giocatore.punteggio <= 21:
                 giocatore.stato = 'Vinto';
                 giocatore.saldo += giocatore.sommaSc * 2;
-            }
-            io.emit('fineRound');
-            return;
-        }
+                console.log(`${giocatore.nome} ha vinto (Dealer Bust)`);
+                break;
 
-        if (giocatore.punteggio === 'Bust') {
-            giocatore.stato = 'Perso';
-            io.emit('fineRound');
-            return;
-        }
+            case giocatore.punteggio > dealer.punteggio && giocatore.punteggio <= 21:
+                giocatore.stato = 'Vinto';
+                giocatore.saldo += giocatore.sommaSc * 2;
+                console.log(`${giocatore.nome} ha vinto`);
+                break;
 
-        if (giocatore.punteggio > dealer.punteggio && giocatore.punteggio <= 21) {
-            giocatore.stato = 'Vinto';
-            giocatore.saldo += giocatore.sommaSc * 2;
-            io.emit('fineRound');
-            return;
-        } else if (giocatore.punteggio < dealer.punteggio && dealer.punteggio <= 21) {
-            giocatore.stato = 'Perso';
-            io.emit('fineRound');
-            return;
-        } else if (giocatore.punteggio == dealer.punteggio) {
-            giocatore.stato = 'Pareggio';
-            giocatore.saldo += giocatore.sommaSc;
-            io.emit('fineRound');
-            return;
+            case giocatore.punteggio < dealer.punteggio && dealer.punteggio <= 21:
+                giocatore.stato = 'Perso';
+                console.log(`${giocatore.nome} ha perso`);
+                break;
+
+            case giocatore.punteggio === dealer.punteggio && giocatore.punteggio <= 21:
+                giocatore.stato = 'Pareggio';
+                giocatore.saldo += giocatore.sommaSc; // Restituisce la puntata
+                console.log(`${giocatore.nome} ha pareggiato`);
+                break;
+
+            default:
+                giocatore.stato = 'Indefinito';
+                console.log(`${giocatore.nome}: stato indefinito`);
+                break;
         }
     });
+
+    // Emetti un evento per notificare la fine del round
+    io.emit('fineRound', giocatori);
+
+    // Reset del gioco
+    setTimeout(resetGame, 5000);
 }
+
+
+
 
 
 
