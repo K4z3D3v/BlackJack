@@ -1,0 +1,460 @@
+@font-face {
+  font-family: "Anomalia";
+  src: url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.eot");
+  src: url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.svg#Anomalia ML v2 AAA Bold")
+      format("svg");
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  font-family: "Anomalia";
+  background: rgb(53, 53, 153);
+  overflow: hidden;
+  background: radial-gradient(circle, rgb(17, 17, 59) 0%, rgb(16, 16, 54) 100%);
+}
+
+#sfondo {
+  width: 100%;
+  height: 110%;
+  position: absolute;
+  background-image: url(../imgs/sfondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+#table {
+  position: relative;
+  width: 1000px;
+  height: 550px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.068);
+  border: 15px solid #5d5da3;
+  border-radius: 50px 50px 650px 650px;
+  box-shadow: 0 0 30px #414187;
+}
+
+.player-area {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #3d3d3d;
+  background-color: rgb(50, 50, 50);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.6s cubic-bezier(0.21, 1.55, 0.5, 0.85);
+}
+
+.punteggio-giocatore {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.highlight {
+  border: 3px solid yellow;
+}
+
+#player1 {
+  bottom: 50px;
+  left: 46%;
+}
+
+#player2 {
+  bottom: 140px;
+  left: 200px;
+  rotate: 40deg;
+}
+
+#player3 {
+  bottom: 140px;
+  right: 200px;
+  rotate: -40deg;
+}
+
+#player4 {
+  top: 150px;
+  left: 70px;
+  rotate: 75deg;
+}
+
+#player5 {
+  top: 150px;
+  right: 70px;
+  rotate: -75deg;
+}
+
+#dealer {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background-color: #5d5da3;
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.37, 0.11, 0.14, 1.79);
+}
+
+#round{
+  position: absolute;
+  font-size: 30px;
+  z-index: 20;
+  left: 2%;
+  top: 2%;
+}
+
+#punteggio-dealer {
+  position: absolute;
+  top: 95%;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.card-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  z-index: 4;
+  top: -100px;
+}
+
+#dealer-card-container {
+  position: absolute;
+  bottom: -330%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  z-index: 6;
+  top: -100px;
+  gap: 10px;
+}
+
+#dealer-card-container .card {
+  min-width: 40px;
+  height: 60px;
+  font-size: 20px;
+}
+
+.card {
+  min-width: 30px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transform-origin: bottom center;
+  transition: all 0.6s cubic-bezier(0.37, 0.11, 0.14, 1.79);
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.card {
+  transition: all 0.3s cubic-bezier(0.37, 0.11, 0.14, 1.79);
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+#actions {
+  position: absolute;
+  top: 92%;
+  width: 70%;
+  height: 70px;
+  justify-content: center;
+  align-items: start;
+  display: flex;
+  gap: 30px;
+}
+
+#hit {
+  width: 100px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 8px;
+  background-color: #7bffa3;
+  color: #ffffff;
+  box-shadow: 5px 5px 0 #62cc82;
+  transition: all 0.25s cubic-bezier(0.37, 0.11, 0.14, 1.79);
+}
+
+#hit:active {
+  box-shadow: 0px 0px 0 #62cc82;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+
+#stand {
+  width: 100px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff7b7b;
+  color: #ffffff;
+  box-shadow: 5px 5px 0 #cc6262;
+  transition: all 0.25s cubic-bezier(0.37, 0.11, 0.14, 1.79);
+}
+
+#stand:active {
+  box-shadow: 0px 0px 0 #cc6262;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+
+#puntate{
+  height: 50px;
+  width: 300px;
+  position: absolute;
+  right: 10%;
+  bottom: 2%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#punta{
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  border: none !important;
+  z-index: 2;
+  font-family: "Anomalia";
+  font-size: 20px;
+  background-color: #ffcb5b;
+  box-shadow: 5px 5px 0 #b99341;
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.37, 0.11, 0.14, 1.79);
+}
+
+#punta:active {
+  box-shadow: 0px 0px 0 #b99341;
+  margin-top: 10px;
+  margin-left: 7px;
+}
+
+#vPuntata{
+  height: 30px;
+  width: 220px;
+  border-radius: 10px;
+  border: none !important;
+  z-index: 2;
+  font-family: "Anomalia";
+  font-size: 18px;
+  text-align: center;
+  background-color: #5d5da3;
+  box-shadow: 5px 5px 0 #2f2f72;
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.37, 0.11, 0.14, 1.79);
+}
+
+#vPuntata:focus{
+  height: 40px;
+  width: 230px;
+  box-shadow: 7px 7px 0 #2f2f72;
+}
+
+::placeholder {
+  color: #ffffff;
+  opacity: 1; /* Firefox */
+}
+
+
+#vPuntata input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#vPuntata:focus{
+  outline: none;
+}
+
+#saldo{
+  position: absolute;
+
+  width: 220px;
+  left: 2%;
+  bottom: 2%;
+  margin: 0;
+  padding-left: 10px;
+  border-radius: 10px;
+  background-color: #5d5da3;
+  box-shadow: 5px 5px 0 #2f2f72;
+
+}
+
+/*SEZIONE DELLA CHAT*/
+.sub-menu-wrap {
+  position: absolute;
+  width: 30%;
+  height: 90%;
+  right: 10px;
+  z-index: 3;
+  border-radius: 20px;
+  right: -29.5%;
+  transition: right 0.8s cubic-bezier(0.37, 0.11, 0.29, 1.5);
+}
+
+.sub-menu-wrap.open-menu {
+  right: 0%;
+}
+
+#chat-container {
+  position: absolute;
+  z-index: 3;
+  background-color: #5d5da310;
+  backdrop-filter: blur(20px);
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  border-radius: 20px;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+#openChat {
+  position: absolute;
+  z-index: 4;
+  left: -12%;
+  bottom: 50%;
+  background-color: #5d5da3;
+  box-shadow: 5px 5px 0 #2f2f72;
+  color: #ffffff;
+  border: none;
+
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.37, 0.11, 0.29, 1.5);
+}
+
+#openChat.ruota {
+  rotate: 360deg;
+}
+
+#message-input {
+  position: absolute;
+  margin-inline: auto;
+  height: 30px;
+  width: 80%;
+  bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Anomalia";
+}
+
+#send-button {
+  position: absolute;
+  height: 33px;
+  width: 50px;
+  bottom: 10px;
+  left: 84%;
+  border-radius: 10px;
+  border: none;
+}
+
+#message-input:focus {
+  outline: none;
+}
+
+
+
+
+
+
+
+
+#risultati {
+  position: absolute;
+  z-index: 21;
+  background-color: #2f2f726c;
+  border-radius: 20px;
+  width: 900px;
+  height: 500px;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+}
+
+#blurB {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 20;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: none;
+}
+
+#risTesto {
+  font-size: 4rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../public/CSS/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <title>Room</title>
+</head>
+<body>
+    <div id="sfondo"></div>
+    <div class="sub-menu-wrap" id="subMenu">
+        <div id="chat-container">
+            <div id="message-container">
+            </div>
+            <div id="send-container">
+                <input type="text" id="message-input" placeholder="Type something">
+                <button type="submit" id="send-button" class="material-symbols-outlined">send</button>
+            </div>
+        </div>
+        <button onclick="toggleMenu() " id="openChat" class="material-symbols-outlined">forum</button>
+    </div>
+    <div id="blurB">
+
+    </div>
+    <div id="risultati">
+        <h1 id="risTesto"></h1>
+    </div>
+    <div id="round">
+        Round: <span id="roundValue"></span>
+    </div>
+    <div id="table">
+        <div id="dealer" class="player-area">
+            <span class="player-info">Dealer</span>
+            <div id="dealer-card-container">
+            </div>
+            <div id="punteggio-dealer"></div>
+        </div>
+        <div id="players">
+        </div>
+    </div>
+
+    <div id="puntate">
+        <input type="number" id="vPuntata" placeholder="Inserisi la puntata">
+        <button id="punta" class="material-symbols-outlined">Invia</button>
+    </div>
+
+    <div id="actions">
+        <button id="hit" class="player-action">Hit</button>
+        <button id="stand" class="player-action">Stand</button>
+    </div>
+
+    <h1 id="saldo">Saldo: <span id="saldoVal"></span></h1>
+
+
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="../client.js"></script>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        let openChat = document.getElementById("openChat");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+            openChat.classList.toggle("ruota")
+        }
+    </script>
+</body>
+</html>

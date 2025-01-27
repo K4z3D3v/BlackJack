@@ -1,0 +1,184 @@
+@import url(https://db.onlinewebfonts.com/c/2ecc29f5f909de1152b76b935fa51c0f?family=Anomalia+ML+v2+AAA+Bold);
+
+body{
+    font-family: "Anomalia ML v2 AAA Bold";
+    src: url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.eot");
+    src: url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.svg#Anomalia ML v2 AAA Bold")format("svg");
+    background: rgb(53,53,153);
+    background: radial-gradient(circle, rgb(17, 17, 59) 0%, rgb(16, 16, 54) 100%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    z-index: -2;
+    overflow: hidden;
+}
+
+#sfondo{
+    width: 100%;
+    height: 110%;
+    position: absolute;
+    background-image: url(../imgs/sfondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.08;
+    z-index: -1;
+}
+
+#titolo{
+    font-size: 10rem;
+    position: absolute;
+    top: -2%;
+    color: #8484b6;
+    text-shadow:0px 4px 5px #2f2f72;
+}
+
+#inputDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: transparent;
+    isolation: isolate;
+    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.068);
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(.37,.11,.14,1.79);
+    text-align: center;
+    margin-top: 100px;
+}
+#playerName{
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(.37,.11,.14,1.79);
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+#playerName:focus{
+    outline: none;
+}
+
+
+#disclaimer{
+    color: #fbffff;
+    font-size: 0.58rem;
+    font-weight: 100;
+    transition: all 0.6s cubic-bezier(.37,.11,.14,1.79);
+    opacity: 0;
+    background-color: #2f2f72;
+    border-radius: 5px;
+}
+
+
+#joinRoom{
+    opacity: 0;
+    position: absolute;
+    bottom: 15px;
+    transition: all 0.6s cubic-bezier(.37,.11,.14,1.79);
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 900;
+    font-size: 20px;
+    background-color: #7bffa3;
+    color: #fbffff;
+}
+
+#cursore{
+    color: #fbffff34;
+    font-size: 70px;
+    position: absolute;
+    top: 30%;
+    transition: opacity 0.2s ;
+}
+
+#inputDiv #welcome {
+    color: #fbffff;
+    font-size: 2rem;
+    margin-top: 10px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(.37,.11,.14,1.79);
+}
+
+#inputDiv:hover #welcome{
+    opacity: 1;
+    text-shadow:0px 4px 5px #2f2f72;
+    scale: 1.5;
+}
+
+#inputDiv:hover #playerName{
+    opacity: 1;
+    scale: 1.1;
+}
+
+#inputDiv:hover #joinRoom{
+    opacity: 1;
+    scale: 1.2;
+}
+
+#inputDiv:hover #disclaimer{
+    opacity: 1;
+    scale: 1.1;
+}
+
+#inputDiv:hover #cursore{
+    opacity: 0;
+}
+
+
+#inputDiv:hover{
+    box-shadow: 0px 0px 30px 0px #2f2f72;
+    scale: 1.08;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.068);
+}
+
+
+#inputDiv:hover #warning{
+    scale: 1.1;
+    opacity: 1;
+}
+
+
+#warning{
+    border: 10px red solid;
+    background-color: #fbffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: black;
+    margin-top: 17px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(.37,.11,.14,1.79);
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+

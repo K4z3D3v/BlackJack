@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodejs": "^0.0.0",
+    "path": "^0.12.7",
+    "play-sound": "^1.1.6",
+    "socket.io": "^4.8.1"
+  },
+  "name": "blackjackv2.0f",
+  "version": "1.0.0",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
