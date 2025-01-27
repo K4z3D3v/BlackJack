@@ -1,6 +1,6 @@
 # Black Jack
 
-Black Jack realizzato in java usando node.js e socket.io
+Black Jack realizzato in JavaScript usando node.js e socket.io
 
 ## Getting Started
 
