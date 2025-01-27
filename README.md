@@ -21,25 +21,50 @@ Uno step-by-step su come settare il tutto.
 
 1.  Copiamo la repo.
 
-    `{git clone https://github.com/Zose1244/BlackJack.git}`
+    ```
+        git clone https://github.com/Zose1244/BlackJack.git
+    ```
 
 2.  Entriamo dentro la cartella
 
-    `{ cd BlackJack }`
+    ```
+        cd BlackJack
+    ```
 
 3.  Installiamo i pacchetti necessari di node.js
 
-    `{ npm init }`
+    ```
+        npm init
+    ```
 
     Fatto ciò premete Enter finche non arrivate alla scritta "Is this OK? (yes)", fate un altra volta Enter e avete fatto.
 
 4.  Installiamo socket.io
 
-    `{ npm i socket.io }`
+    ```
+        npm i socket.io
+    ```
 
 5.  (Facoltativo) Installiamo nodemon, serve per poter applicare i cambiamenti al server senza restartarlo ogni volta.
 
-    `{ npm i --save-dev nodemon }`
+    ```
+        npm i --save-dev nodemon
+    ```
+
+## Come testare
+
+Startiamo il server
+
+```
+    cd BlackJack
+    node server.js
+```
+
+Se avete installato nodemon:
+
+```
+    nodemon server.js
+```
 
 Se fino ad ora avete fatto tutto nel modo corretto, vi dovrebbe spuntare una scritta che vi da il link http://localhost:3000. Apritelo.
 
