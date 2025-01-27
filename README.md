@@ -73,7 +73,7 @@ Se fino ad ora avete fatto tutto nel modo corretto, vi dovrebbe spuntare una scr
 
 ## Buon divertimento ludopatico. :)
 
-## Authors
+## Autori
 
 - **Daniele Sarakula** - _Letteralmente quello che ha fatto tutto_ -
   [K4z3D3v](https://github.com/K4z3D3v)
