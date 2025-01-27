@@ -57,6 +57,9 @@ Startiamo il server
 
 ```
     cd BlackJack
+```
+
+```
     node server.js
 ```
 
