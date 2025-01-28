@@ -37,7 +37,7 @@ Uno step-by-step su come settare il tutto.
         npm init
     ```
 
-    Fatto ciò premi Enter finche non arrivi alla scritta "Is this OK? (yes)", fai un'altra volta Enter e avete fatto.
+    Fatto ciò premi Enter finche non arrivi alla scritta "Is this OK? (yes)", fai un'altra volta Enter e hai fatto.
 
 4.  Installiamo socket.io
 
@@ -45,7 +45,7 @@ Uno step-by-step su come settare il tutto.
         npm i socket.io
     ```
 
-5.  (Facoltativo) Installiamo nodemon, serve per poter applicare i cambiamenti al server senza restartarlo ogni volta.
+5.  (Facoltativo) Installiamo nodemon, serve per poter applicare i cambiamenti al server senza doverlo riavviare ogni volta.
 
     ```
         npm i --save-dev nodemon
