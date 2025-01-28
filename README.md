@@ -37,7 +37,7 @@ Uno step-by-step su come settare il tutto.
         npm init
     ```
 
-    Fatto ciò premete Enter finche non arrivate alla scritta "Is this OK? (yes)", fate un altra volta Enter e avete fatto.
+    Fatto ciò premi Enter finche non arrivi alla scritta "Is this OK? (yes)", fai un'altra volta Enter e avete fatto.
 
 4.  Installiamo socket.io
 
