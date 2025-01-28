@@ -5,7 +5,7 @@ Black Jack realizzato in JavaScript usando node.js e socket.io
 ## Getting Started
 
 Queste istruzioni vi spiegheranno come startare il progetto.
-Verrà spiegato come installare Node.js insieme a Socket.io e come utilizzrli.
+Verrà spiegato come installare Node.js insieme a Socket.io e come utilizzarli.
 
 ### Requisiti
 
