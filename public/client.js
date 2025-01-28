@@ -32,10 +32,11 @@ socket.on('aggiornaGiocatori', (giocatori, dealer, turnoCorrente) => {
             cardContainer.innerHTML = '';
             giocatori[index].carte.forEach((carta) => {
                 const elCarta = document.createElement('div');
-                elCarta.className = 'card';
+                elCarta.className = `card ${['♥', '♦'].includes(carta.seme) ? 'red' : 'black'}`;
                 elCarta.textContent = `${carta.valore}${carta.seme}`;
                 cardContainer.appendChild(elCarta);
             });
+            
 
             if (index === turnoCorrente) {
                 divGioAggiornato.classList.add('highlight');
@@ -53,7 +54,7 @@ socket.on('aggiornaGiocatori', (giocatori, dealer, turnoCorrente) => {
     cardContainer.innerHTML = '';
     dealer.carte.forEach((carta, index) => {
         const elCarta = document.createElement('div');
-        elCarta.className = 'card';
+        elCarta.className = `card ${['♥', '♦'].includes(carta.seme) ? 'red' : 'black'}`;
         elCarta.textContent =
             index === 0 && !dealer.mostraCarte ? 'XX' : `${carta.valore}${carta.seme}`;
         cardContainer.appendChild(elCarta);

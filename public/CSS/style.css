@@ -458,3 +458,12 @@ input::-webkit-inner-spin-button {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
+
+
+.card.red {
+  color: red;
+}
+
+.card.black {
+  color: black;
+}
