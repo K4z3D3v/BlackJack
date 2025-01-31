@@ -39,10 +39,10 @@ Uno step-by-step su come settare il tutto.
 
     Fatto ciò premi Enter finche non arrivi alla scritta "Is this OK? (yes)", fai un'altra volta Enter e hai fatto.
 
-4.  Installiamo socket.io
+4.  Installiamo socket.io ed express
 
     ```
-        npm i socket.io
+        npm i socket.io express
     ```
 
 5.  (Facoltativo) Installiamo nodemon, serve per poter applicare i cambiamenti al server senza doverlo riavviare ogni volta.
